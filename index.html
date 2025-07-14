@@ -37,9 +37,72 @@
             <p class="text-slate-600 mt-2">Ein praxisnaher Überblick für den KI-Workshop | Bildungswelten (BW) - Juli 2025</p>
         </header>
 
+        <!-- KI Growth Section -->
+        <div id="growthSection" class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6">KI Ausgangssituation: Exponentielles Wachstum</h2>
+            <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col md:flex-row justify-around items-center gap-8 text-center">
+                <!-- 2022 Circle -->
+                <div class="flex flex-col items-center">
+                    <div class="w-24 h-24 bg-slate-200 rounded-full flex items-center justify-center shadow-inner animate-pulse">
+                        <span class="text-lg font-bold text-slate-600">Start</span>
+                    </div>
+                    <p class="mt-2 font-semibold text-xl">2022</p>
+                    <p class="text-sm text-slate-500">Beginn der breiten Adaption</p>
+                </div>
+                <!-- 2025 Circle -->
+                <div class="flex flex-col items-center">
+                    <div class="w-36 h-36 bg-teal-200 rounded-full flex items-center justify-center shadow-inner animate-pulse">
+                         <span class="text-xl font-bold text-teal-800">Aktuell</span>
+                    </div>
+                    <p class="mt-2 font-semibold text-xl">2025</p>
+                    <p class="text-sm text-slate-500">Integration in Kernprozesse</p>
+                </div>
+                <!-- 2028 Circle -->
+                <div class="flex flex-col items-center">
+                    <div class="w-48 h-48 bg-indigo-200 rounded-full flex items-center justify-center shadow-inner animate-pulse">
+                         <span class="text-2xl font-bold text-indigo-800">Prognose</span>
+                    </div>
+                    <p class="mt-2 font-semibold text-xl">2028</p>
+                    <p class="text-sm text-slate-500">Standard in allen Branchen</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investment Section -->
+        <div id="investmentSection" class="mb-12">
+             <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6">Ein globales Wettrennen: Investitionen & Regulierung</h2>
+             <div class="bg-white rounded-xl shadow-lg p-6 text-slate-700 space-y-4">
+                <p>Wir erleben gerade eine Investitionswelle von historischem Ausmaß. Staaten und Konzerne investieren jährlich <strong>hunderte Milliarden Euro</strong> in die KI-Entwicklung, um im globalen Wettbewerb zu bestehen.</p>
+                <p>Ein einziges Unternehmen, <strong>Nvidia</strong>, das die entscheidenden Chips für KI herstellt, ist heute mit über <strong>3 Billionen US-Dollar</strong> mehr wert als die gesamte deutsche Wirtschaft. Das zeigt: KI ist nicht nur Software, sondern eine neue industrielle Grundlage, die auf Hardware gebaut ist.</p>
+                <p>Gleichzeitig reagiert die Politik. Mit dem <strong>EU AI Act</strong> wurde das weltweit erste umfassende KI-Gesetz geschaffen, um Leitplanken für diese mächtige Technologie zu setzen und Vertrauen zu schaffen.</p>
+                <p class="font-semibold text-indigo-700 mt-4">Gigantische Summen, globale Konzerne, die neu bewertet werden, und weltweite gesetzliche Rahmenwerke... Die Frage, die wir uns stellen müssen: Wann hat es das das letzte Mal gegeben?</p>
+             </div>
+        </div>
+
+        <!-- Strategic Introduction Section -->
+        <div id="strategySection" class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6">Ausgangssituation & Strategische Einordnung</h2>
+            <div id="strategyCardsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Strategy cards will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Efficiency / Decision Section -->
+        <div id="efficiencyDecisionSection" class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6">Effizienter arbeiten, besser entscheiden</h2>
+            <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                 <div class="flex justify-center">
+                    <img src="https://i.imgur.com/8mk1IWB.png" alt="Grafik zu effizienter arbeiten und besser entscheiden" class="max-w-full h-auto rounded-lg shadow-md">
+                </div>
+            </div>
+            <div id="efficiencyCardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Efficiency cards will be dynamically inserted here -->
+            </div>
+        </div>
+
         <!-- Theory Section -->
         <div id="theorySection" class="mb-12">
-            <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6">Theoretische Grundlagen</h2>
+            <h2 class="text-2xl font-bold text-slate-800 border-b-2 border-indigo-500 pb-2 mb-6">Theoretische Grundlagen / Begrifflichkeiten</h2>
             <div id="theoryCardsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Theory cards will be dynamically inserted here -->
             </div>
@@ -55,6 +118,7 @@
                     
                     <select id="categoryFilter" onchange="filterAndRender()" class="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
                         <option value="">Alle Kategorien</option>
+                        <option>Schulung & Bewerbung (AMS-Fokus)</option>
                         <option>Abteilungsübergreifend</option>
                         <option>Automatisierung mittels KI</option>
                         <option>Effizient arbeiten</option>
@@ -90,6 +154,19 @@
 
 <script>
     // --- DATA MODEL ---
+    const strategyData = [
+        { id: 'strat-1', name: 'KI als Strategie-Thema', purpose: 'KI ist keine IT-Frage, sondern ein zentrales Thema der Strategie und Organisationsentwicklung. Es geht darum, neue Fähigkeiten im Unternehmen zu verankern.', category: 'Grundlagen & Konzepte', praxisbeispiele: '<p><strong>Leitfrage für die bit group:</strong> Statt nur zu fragen "Welche Software kaufen wir?", müssen wir fragen: "Wie verändern wir unser Geschäftsmodell, unsere Prozesse und unsere Kultur, um die Potenziale der KI zur Erreichung unserer AMS-Ziele voll auszuschöpfen?"</p>' },
+        { id: 'strat-2', name: 'Geschäftsmodelle transformieren', purpose: 'KI ermöglicht es, von reaktiven Dienstleistungen zu prädiktiven Angeboten überzugehen und Produkte hyper-personalisiert anzubieten.', category: 'Grundlagen & Konzepte', praxisbeispiele: '<p><strong>Beispiel bit schulungscenter:</strong> Statt nur Standardkurse zu verkaufen, bieten wir "Nachweislich erfolgreiche Arbeitsmarkt-Integration" an. Eine KI analysiert nicht nur Arbeitsmarkttrends, sondern auch die individuellen Sprach- und Bildungs-Hintergründe der Teilnehmer, um hyper-personalisierte Lernpfade zu erstellen. Der Wert für den AMS verschiebt sich vom "Kursabschluss" zur messbar höheren und nachhaltigeren Vermittlungsquote.</p>' },
+        { id: 'strat-3', name: 'Organisation neugestalten', purpose: 'KI erfordert agilere, vernetzte Strukturen und eine datenzentrierte Kultur. Die Rolle des Menschen verschiebt sich zu kreativen und strategischen Aufgaben.', category: 'Grundlagen & Konzepte', praxisbeispiele: '<p><strong>Beispiel bit management:</strong> Anstatt auf jährliches Feedback für Kurs-Updates zu warten, erhält das Management Echtzeit-Einblicke durch eine KI, die anonymisiertes Teilnehmer-Feedback und Lernfortschritte analysiert. So können wir proaktiv Dropout-Risiken erkennen und Kursinhalte anpassen, um die vom AMS geforderten Erfolgsquoten zu sichern.</p>' },
+        { id: 'strat-4', name: 'Führungskultur weiterentwickeln', purpose: 'Die Rolle der Führungskraft wandelt sich vom operativen Entscheider zum Visionär und Coach, der eine Kultur des Experimentierens und der Verantwortung fördert.', category: 'Grundlagen & Konzepte', praxisbeispiele: '<p><strong>Beispiel bit schulungscenter:</strong> Ein Trainer gibt nicht den exakten Inhalt für einen neuen "KI in Marketing"-Kurs vor. Stattdessen definiert er das Ziel ("Verbessere die Vermittlungsquote in Marketingberufe um 15%") und befähigt sein Team, mit KI-Tools topaktuelle, vom Arbeitsmarkt geforderte Skills zu recherchieren und zu vermitteln.</p>' },
+        { id: 'strat-5', name: 'Die 5 Kernfragen der Führung', purpose: 'Die strategische Einführung von KI erfordert die Beantwortung fundamentaler Fragen, die über die Technologie hinausgehen.', category: 'Grundlagen & Konzepte', praxisbeispiele: '<ul class="list-disc pl-5"><li><strong>Wahrnehmung:</strong> Wie ist die Wahrnehmung hinsichtlich der Auslastung der bit-Mitarbeiter im Vergleich zwischen Belegschaft und Management?</li><li><strong>Effizienzgewinne:</strong> Was machen wir mit den durch KI realisierten Effizienzgewinnen? (z.B. mehr Zeit für Teilnehmer, strategische Projekte, Kostensenkung?)</li><li><strong>Kompetenzen:</strong> Welche Fähigkeiten brauchen unsere Trainer und Mitarbeiter morgen, um im AMS-Kontext erfolgreich zu sein?</li><li><strong>Kultur:</strong> Sind wir Bremser oder Beschleuniger für Innovation, die direkt beim Teilnehmer ankommt?</li><li><strong>Ethik:</strong> Wie gehen wir verantwortungsvoll mit den Daten unserer Teilnehmer um?</li></ul>' }
+    ];
+
+    const efficiencyData = [
+        { id: 'eff-1', name: 'Effizienter arbeiten', purpose: 'Routinetätigkeiten so weit wie möglich durch KI und Automation ersetzen, um Freiräume für wertschöpfendere Aufgaben zu schaffen.', category: 'Grundlagen & Konzepte', praxisbeispiele: '<p><strong>Praxisbeispiel bit schulungscenter:</strong> Ein Trainer verbringt weniger Zeit mit der Erstellung von Standard-Kursunterlagen, da eine KI diese basierend auf Stichworten generiert. Die gewonnene Zeit nutzt er für die individuelle Betreuung von Teilnehmern mit Lernschwierigkeiten, was die Dropout-Rate senkt und die Erfolgsquote für den AMS erhöht.</p>' },
+        { id: 'eff-2', name: 'Besser entscheiden', purpose: 'Die Informationsbasis für Entscheidungen massiv verbreitern und fundieren, um schneller und datengestützter die richtigen Weichen stellen zu können.', category: 'Grundlagen & Konzepte', praxisbeispiele: '<p><strong>Praxisbeispiel bit management:</strong> Ein Bereichsleiter muss entscheiden, ob ein neuer Kurs zum Thema "KI im Handwerk" eingeführt werden soll. Statt auf Bauchgefühl zu vertrauen, analysiert eine KI aktuelle Arbeitsmarktdaten, AMS-Anforderungen und die Nachfrage in der Zielgruppe und liefert eine fundierte Entscheidungsgrundlage in Minuten statt Tagen.</p>' }
+    ];
+
     const theoryData = [
         { id: 'term-1', name: '1. Digitalisierung', purpose: 'Die Umwandlung von analogen Informationen oder Prozessen in eine digitale Form. Es ist die absolute Grundlage für alles Weitere.', category: 'Grundlagen & Konzepte', praxisbeispiele: '<p><strong>Anschauliches Beispiel:</strong> Eine Papierrechnung wird gescannt und als PDF-Datei gespeichert. Der Prozess (Rechnung prüfen, bezahlen) ist vielleicht noch manuell, aber das Dokument selbst ist jetzt digital und kann einfach per E-Mail versendet oder in einem digitalen Archiv gesucht werden.</p>' },
         { id: 'term-2', name: '2. Automatisierung', purpose: 'Die Nutzung von Technologie, um eine Aufgabe oder einen Prozess nach festen, vordefinierten Regeln ohne menschliches Eingreifen auszuführen.', category: 'Grundlagen & Konzepte', praxisbeispiele: '<p><strong>Anschauliches Beispiel:</strong> Sie erstellen eine Regel in Ihrem E-Mail-Programm: "Wenn eine E-Mail vom Absender \'chef@firma.de\' kommt, markiere sie automatisch als \'Wichtig\'". Das System folgt stur dieser einen Regel (IF-THEN-Logik) und nimmt Ihnen einen kleinen, wiederkehrenden Arbeitsschritt ab.</p>' },
@@ -99,8 +176,11 @@
     ];
 
     const aiToolsData = [
+        { id: 'tool-17', name: 'KI als Lern-Assistent im Kurs', purpose: 'Individuelle Unterstützung für Teilnehmer mit unterschiedlichem Tempo und Sprachniveau zur Steigerung des Lernerfolgs.', time: 30, cost: 20, area: 'Schulungsbetrieb, Training', category: 'Schulung & Bewerbung (AMS-Fokus)', praxisbeispiele: '<ul><li class="mb-1"><strong>Echtzeit-Übersetzung & Vereinfachung:</strong> Ein KI-Tool übersetzt Fachbegriffe in Echtzeit oder formuliert komplexe Themen auf einem einfacheren Sprachniveau (z.B. A2/B1), um Sprachbarrieren abzubauen.</li><li class="mb-1"><strong>Individuelle Übungen:</strong> Die KI erkennt Lernschwächen und generiert automatisch passende Zusatzübungen, um Wissenslücken gezielt zu schließen.</li><li class="mb-1"><strong>Dokumentation für AMS:</strong> Ein KI-Assistent hilft Trainern, den Lernfortschritt der Teilnehmer effizient und AMS-konform zu dokumentieren.</li></ul>' },
+        { id: 'tool-18', name: 'KI im Bewerbungstraining', purpose: 'Überwindung von sprachlichen und formalen Hürden bei der Jobbewerbung zur Erhöhung der Vermittlungschancen.', time: 50, cost: 30, area: 'Jobcoaching, Vermittlung', category: 'Schulung & Bewerbung (AMS-Fokus)', praxisbeispiele: '<ul><li class="mb-1"><strong>Lebenslauf-Optimierung:</strong> Eine KI passt den Lebenslauf eines Teilnehmers an die formalen Standards des österreichischen Arbeitsmarktes an und hebt die für die jeweilige Stelle (z.B. aus dem eJob-Room) relevantesten Fähigkeiten hervor.</li><li class="mb-1"><strong>Anschreiben-Erstellung:</strong> Unterstützung bei der Erstellung von überzeugenden, fehlerfreien Anschreiben, die auf die jeweilige Stelle zugeschnitten sind.</li><li class="mb-1"><strong>Interview-Simulation:</strong> Ein KI-Avatar trainiert Bewerbungsgespräche, gibt Feedback zur Aussprache und hilft, auf Standardfragen sicher auf Deutsch zu antworten, um die Erfolgsquote bei realen Gesprächen zu erhöhen.</li></ul>' },
         { id: 'tool-1', name: 'ChatGPT / GPT-4', purpose: 'Textgenerierung, Automatisierung, Code-Erstellung', time: 80, cost: 40, area: 'Marketing, Kundenservice, Entwicklung, HR', category: 'Abteilungsübergreifend', praxisbeispiele: '<ul><li class="mb-1"><strong>Marketing:</strong> Erstellung von Blog-Artikeln, Social-Media-Posts und Werbetexten.</li><li class="mb-1"><strong>Kundenservice:</strong> Entwicklung von Chatbot-Skripten zur Beantwortung häufiger Fragen.</li><li><strong>HR:</strong> Formulierung von Stellenanzeigen und internen Mitteilungen.</li></ul>' },
         { id: 'tool-3', name: 'Copilot 365', purpose: 'KI-Integration in Office-Anwendungen', time: 70, cost: 35, area: 'Büroorganisation, Management', category: 'Abteilungsübergreifend', praxisbeispiele: '<ul><li class="mb-1"><strong>Word:</strong> Automatische Zusammenfassung langer Dokumente.</li><li class="mb-1"><strong>Excel:</strong> Erstellung von Formeln und Diagrammen durch einfache textuelle Anweisungen.</li><li><strong>Teams:</strong> Protokollierung von Meetings und Zuweisung von Aufgaben.</li></ul>' },
+        { id: 'tool-19', name: 'Google Workspace + Gemini', purpose: 'KI-Integration in Google-Dienste (Docs, Sheets, Gmail)', time: 70, cost: 35, area: 'Büroorganisation, Zusammenarbeit', category: 'Abteilungsübergreifend', praxisbeispiele: '<ul><li class="mb-1"><strong>Gmail:</strong> KI hilft beim Formulieren von professionellen E-Mails ("Help me write").</li><li class="mb-1"><strong>Docs:</strong> Automatische Zusammenfassung von langen Dokumenten und Protokollen.</li><li><strong>Sheets:</strong> Unterstützung bei der Erstellung von Tabellen und der Organisation von Daten ("Help me organize").</li></ul>' },
         { id: 'tool-14', name: 'Zapier', purpose: 'Verbindet Web-Apps und automatisiert Workflows ohne Code', time: 90, cost: 50, area: 'Marketing, Vertrieb, IT, Operations', category: 'Automatisierung mittels KI', praxisbeispiele: '<ul><li class="mb-1"><strong>Definition:</strong> Zapier ist eine Online-Automatisierungsplattform, die es Benutzern ermöglicht, verschiedene Webanwendungen miteinander zu verbinden. Die KI-Komponente hilft bei der Erstellung, Formatierung und Verarbeitung von Daten zwischen den Schritten.</li><li class="mb-1"><strong>Beispiel:</strong> Wenn ein neuer Lead in HubSpot erstellt wird, erstelle automatisch eine Zeile in Google Sheets und sende eine Slack-Benachrichtigung an das Vertriebsteam.</li></ul>' },
         { id: 'tool-15', name: 'Make.com', purpose: 'Visuelle Plattform zur Erstellung, Automatisierung und Optimierung von Workflows', time: 90, cost: 55, area: 'Marketing, Operations, IT, Produktmanagement', category: 'Automatisierung mittels KI', praxisbeispiele: '<ul><li class="mb-1"><strong>Definition:</strong> Make (früher Integromat) ist eine visuelle Automatisierungsplattform, die komplexe, mehrstufige Szenarien mit Verzweigungen und Logik ermöglicht.</li><li class="mb-1"><strong>Beispiel:</strong> Wenn eine E-Mail mit einem Anhang in einem bestimmten Gmail-Postfach ankommt, lade den Anhang in Google Drive hoch, erstelle eine Aufgabe in Asana und benachrichtige den Projektmanager.</li></ul><p class="mt-4 text-sm"><strong>Praxis-Tutorial:</strong> Dieses Tutorial-Video führt Sie Schritt für Schritt durch die Erstellung Ihres ersten Automatisierungs-Szenarios. Sie lernen, wie eine Google Formular-Antwort automatisch in eine Google Tabelle eingetragen und eine Benachrichtigung in Slack gesendet wird – ein perfektes Beispiel, um die Funktionsweise zu verstehen.</p><div class="mt-2 rounded-lg overflow-hidden aspect-video"><iframe class="w-full h-full" src="https://www.youtube.com/embed/5FTr2hPArnI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>' },
         { id: 'tool-16', name: 'n8n.io', purpose: 'Open-Source Workflow-Automatisierung (self-hosted oder Cloud)', time: 85, cost: 80, area: 'IT, Entwicklung, Daten-Teams', category: 'Automatisierung mittels KI', praxisbeispiele: '<ul><li class="mb-1"><strong>Definition:</strong> n8n ist eine erweiterbare Workflow-Automatisierungsplattform, die entweder in der Cloud oder auf eigenen Servern betrieben werden kann (Open-Source), was mehr Kontrolle und potenziell niedrigere Kosten ermöglicht.</li><li class="mb-1"><strong>Beispiel:</strong> Sammle täglich Daten aus verschiedenen APIs (z.B. Wetter, Aktienkurse), verarbeite sie und erstelle einen zusammenfassenden Bericht, der per E-Mail versendet wird.</li></ul>' },
@@ -254,7 +334,9 @@
 
     // --- INITIALIZATION ---
     window.onload = () => {
-        // Render theory cards separately and permanently
+        // Render theory and strategy cards separately and permanently
+        renderCards(strategyData, 'strategyCardsContainer');
+        renderCards(efficiencyData, 'efficiencyCardsContainer');
         renderCards(theoryData, 'theoryCardsContainer');
         // Render and filter tool cards
         filterAndRender();
